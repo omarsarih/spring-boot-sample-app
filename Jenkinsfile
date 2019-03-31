@@ -24,10 +24,14 @@ pipeline {
                         def targetVersion = getDevVersion()
                         print 'target build version...'
                         print targetVersion
+                                                                     print 'ccccccccc'
+
                         sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
                         def pom = readMavenPom file: 'pom.xml'
                         // get the current development version
                         developmentArtifactVersion = "${pom.version}-${targetVersion}"
+                                                                     print 'ddddddddd'
+
                         print pom.version
                         // execute the unit testing and collect the reports
                         junit '**//*target/surefire-reports/TEST-*.xml'
