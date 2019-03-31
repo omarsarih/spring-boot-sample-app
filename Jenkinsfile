@@ -2,9 +2,9 @@ pipeline {
     // run on jenkins nodes tha has java 8 label
     agent { label '' }
     // global env variables
-   // environment {
-//        EMAIL_RECIPIENTS = 'mahmoud.romeh@gmail.com'
-  //  }
+    environment {
+        EMAIL_RECIPIENTS = 'omar.sarih@gmail.com'
+    }
     stages {
 
         stage('Build with unit testing') {
